@@ -5,7 +5,6 @@ import { ReadComponent } from './application/crud/read/read.component';
 import { ShowComponent } from './application/crud/show/show.component';
 import { UpdateComponent } from './application/crud/update/update.component';
 import { ErrorComponent } from './application/error/error.component';
-import { FormComponent } from './application/formulaires/form/form.component';
 import { ReactiveFormComponent } from './application/formulaires/reactive-form/reactive-form.component';
 import { HomeComponent } from './application/home/home.component';
 import { TutorielsComponent } from './application/tutoriels/tutoriels.component';
