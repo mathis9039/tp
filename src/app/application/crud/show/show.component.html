@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>information du compte</h2>
+    <form [formGroup]="showUserForm">
+        <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input id="prenom" formControlName="prenom" class="form-control" [(ngModel)]="user.prenom" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="motdepasse">mot de passe</label>
+            <input type="password" id="motdepasse" formControlName="motdepasse" class="form-control"
+                [(ngModel)]="user.motdepasse" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="methodepaiment">méthode de paiment</label>
+            <select class="form-control" id="methodepaiment" formControlName="methodepaiment" disabled="true" [(ngModel)]="user.methodepaiment" readonly>
+                <option>cash</option>
+                <option>mastercard</option>
+                <option>visa</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="commentaire">Commentaire</label>
+            <textarea id="commentaire" formControlName="commentaire" class="form-control" rows="3"
+                [(ngModel)]="user.commentaire" readonly></textarea>
+        </div>
+
+        <button [routerLink]="['/crud']" class="btn btn-primary">Retour</button>
+        <hr>
+    </form>
+</div>

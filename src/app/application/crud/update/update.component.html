@@ -1,0 +1,57 @@
+<div class="container">
+  <h2>mise à jour du compte</h2>
+  <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+    <div class="form-group">
+      <label for="prenom">Prénom</label>
+      <input id="prenom" formControlName="prenom" class="form-control" [(ngModel)] = "user.prenom">
+      <!--c'est une banane-->
+
+      <div *ngIf="!form3.prenom.valid && (form3.prenom.dirty ||form3.prenom.touched)">
+        <div [hidden]="!form3.prenom.errors.required" class="alert alert-danger py-2 mt-3">
+          Le nom est obligatoire
+        </div>
+        <div [hidden]="!form3.prenom.errors.minlength" class="alert alert-danger py-2 mt-3">
+          Le nom doit être d'au moins 4 charactères
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="motdepasse">mot de passe</label>
+      <input type="password" id="motdepasse" formControlName="motdepasse" class="form-control" [(ngModel)] = "user.motdepasse">
+      <div *ngIf="!form3.motdepasse.valid && (form3.motdepasse.dirty ||form3.motdepasse.touched)">
+        <div [hidden]="!form3.motdepasse.errors.required" class="alert alert-danger py-2 mt-3">
+          Le mot de passe est obligatoire
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="methodepaiment">méthode de paiment</label>
+      <select class="form-control" id="methodepaiment" formControlName="methodepaiment" [(ngModel)] = "user.methodepaiment">
+        <option>cash</option>
+        <option>mastercard</option>
+        <option>visa</option>
+      </select>
+      <div *ngIf="!form3.methodepaiment.valid && (form3.methodepaiment.dirty ||form3.methodepaiment.touched)">
+        <div [hidden]="!form3.methodepaiment.errors.required" class="alert alert-danger py-2 mt-3">
+          Le methode de paiment est obligatoire
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="commentaire">Commentaire</label>
+      <textarea id="commentaire" formControlName="commentaire" class="form-control" rows="3" [(ngModel)] = "user.commentaire"></textarea>
+    </div>
+
+    <button class="btn btn-primary">mettre à jour</button>
+    <div *ngIf="validMessage != ''" class="text-danger text-center">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+  </form>
+</div>
+
+<hr>
+
+<!-- <h3>{{ form2.value | json}} -->

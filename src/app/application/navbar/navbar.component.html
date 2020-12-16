@@ -1,0 +1,39 @@
+<header>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand mr-auto ml-2" href="https://github.com/zaratechs/420-345-G001-A20/wiki/Réflexion-Travail-Final">Mathis Patenaude</a>  
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a routerLink="home" class="nav-link font-weight-bold text-capitalize px-3" >home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle font-weight-bold text-capitalize px-3" id="tutorial" 
+          role="button" data-toggle="dropdown">
+            tutorial
+          </a>
+          <div class="dropdown-menu" aria-labelledby="tutorial">
+            <a [routerLink]="['/tutoriel', 1]" class="dropdown-item">Mini tutoriel Angular 10</a>
+            <a [routerLink]="['/tutoriel', 2]" class="dropdown-item">Mini tutoriel Crud</a>
+            <a [routerLink]="['/tutoriel', 3]" class="dropdown-item">Mini tutoriel des relations</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a [routerLink]="['/formulaire']" class="nav-link font-weight-bold text-capitalize px-3" >Formulaires</a>
+        </li>
+        <li class="nav-item active">
+          <a [routerLink]="['/crud']" class="nav-link font-weight-bold text-capitalize px-3" >Crud</a>
+        </li>
+        <li class="nav-item active">
+          <a [routerLink]="['/contact']" class="nav-link font-weight-bold text-capitalize px-3" >Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+</header>

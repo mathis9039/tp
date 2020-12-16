@@ -1,0 +1,44 @@
+
+
+<div class="container">
+    <h1>Exemple Crud</h1>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr >
+                <th *ngFor="let entete of headElements" scope="col">{{ entete }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of listUsers; let i = index">
+                <td scope="row">{{ user.id}}</td>
+                <td>{{ user.prenom}}</td>
+                <td>{{ user.methodepaiment }}</td>
+                <td>
+                    <a [routerLink]="['/show/', user.id]" class="btn btn-info mx-2">Afficher</a>
+                    <a [routerLink]="['/updateForm/', user.id]" class="btn btn-primary mx-2">Update</a>
+                    <a data-toggle="modal" data-target="#delete" (click)="getId(user.id, i)">
+                        <input class="btn btn-danger mx-2" type="button" value="Supprimer" />
+                      </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">confirmer la suppression</p>
+      </div>
+      <div class="modal-body">
+        <i class="fas fa-times fa-4x text-danger"></i>
+      </div>
+      <div class="modal-footer flex-center">
+        <a class="btn  btn-outline-danger" (click)="delete()">Oui</a>
+        <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">Non</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

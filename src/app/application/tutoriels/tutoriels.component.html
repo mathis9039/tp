@@ -1,0 +1,116 @@
+<ng-container [ngSwitch]="tutorielLinkId">
+    <ng-container *ngSwitchCase="1">
+        <div>
+            <h1 class="p-5 text-center">Mini tutoriel Angular</h1>
+            <div class="container">
+                <ul class="list-unstyled text-center">
+                    <li>Vérifier les versions: ng --version || Npm --version || Node --version</li>
+                    <hr>
+                    <li>Créer un projet complet avec router: ng n [nom] --routing</li>
+                    <hr>
+                    <li>Installation du serveur json (-g pour global || @version pour un version précise du
+                        json-server):
+                        npm i -g json-server || npm i -g json-server@[version]</li>
+                    <hr>
+                    <li>Installation de bootstrap: npm i -g bootstrap || npm I -g bootstrap @[version]</li>
+                    <hr>
+                    <li>Installation de fortawesome: npm I @fortawesome/ fontawesome-free –save</li>
+                    <hr>
+                    <li>Installation jquery: npm I jquery --save</li>
+                    <hr>
+                    <li>Désinstaller un fontawsome: npm uninstall @fortawesome/angular-fontawesome@latest</li>
+                    <hr>
+                    <li>Réparer les conflits de librairies: npm audit fix</li>
+                    <hr>
+                    <li>Choix et installation des composants: ng g c composants/[nom]</li>
+                    <hr>
+                    <li>Création d’un dossier à la source plus création fichier: Mkdir database && cd database && touch
+                        data.json</li>
+                    <hr>
+                    <li>Création service: ng g s services/[nom]</li>
+                    <hr>
+                    <li>Lancement du site: npm start</li>
+                    <hr>
+                    <li>Lancement json-server: json-server -w .\data.json --port [4000]</li>
+                    <hr>
+                    <li>Lancement de test unitaire(par logiciel de navigation): ng test</li>
+                    <hr>
+                    <li>Lancement des specs: ng lint</li>
+                    <hr>
+                    <li>Lancement de test et lint: ng e2e</li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="2">
+        <div class="text-center">
+            <h1>Mini tutoriel Crud</h1>
+            <p>Dans Angular,ce sont des services, ils servent à communiquer avec une base de données</p>
+            <div class="text-center">
+                <ul class="list-unstyled">
+                    <li>create</li>
+                    <hr>
+                    <li>read</li>
+                    <hr>
+                    <li>update</li>
+                    <hr>
+                    <li>delete</li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="3">
+        <div class="text-center">
+            <h1>Mini tutoriel Relations</h1>
+            <div class="text-center">
+                <ul class="list-unstyled">
+                    <li>Association : Une association entre deux classes.</li>
+                    <hr>
+                    <li>Multiplicité: Peut spécifier le nombre d'objets pouvent participer à une association.area</li>
+                    <hr>
+                    <li>Agrégation: une voiture possède 4 roues, voici un exemple d'agrégation.</li>
+                    <hr>
+                    <li>Composition: objet composé de plusieurs choses.</li>
+                    <hr>
+                    <li>Généralisation: une superclasse composé de plusieurs sous-classes</li>
+                    <hr>
+                    <li>Dépendance: relation qui ne nécessite pas forcément de liens entre les objets</li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <div>
+            <a [routerLink]="['/error']">name </a>
+        </div>
+    </ng-container>
+</ng-container>
+
+
+<!--<ng-container *ngIf="tutorielLinkId == 1; then tutoAngular; else tutoCrud">
+</ng-container>
+
+<ng-template #tutoAngular>
+    <div>
+        <h1>Mini tutoriel Angular</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ipsum suscipit beatae amet, accusamus qui iste nisi, voluptas laboriosam, totam nemo repudiandae consectetur adipisci? Quasi cum qui ipsum rem fugiat obcaecati fuga eligendi laborum dolorum culpa itaque ratione rerum ea dolorem, architecto blanditiis! Sit esse quam beatae assumenda eveniet. Eligendi distinctio tenetur aspernatur libero odio quam quisquam iusto voluptas dicta, laboriosam officia perspiciatis veritatis enim ipsum. Tenetur illo, dolorem laudantium obcaecati quibusdam tempora ipsam adipisci temporibus veritatis, odio aliquid asperiores minus quia optio, sapiente nobis dicta. Vel ad quia deleniti laborum doloribus maiores eligendi, doloremque fuga. Debitis similique nam sit inventore et cum laborum vel, aliquid fugiat provident repellat, atque laudantium. Rerum facilis necessitatibus nemo in nulla, quidem alias a quia reprehenderit et veritatis sunt magnam quaerat velit similique, voluptates autem debitis ad at repudiandae. Ipsum nulla perferendis fuga. Perferendis aperiam hic iusto aliquam deleniti? Possimus cupiditate optio officiis odio amet, debitis quod eveniet eaque laudantium ratione, voluptate temporibus atque. Nemo quia repellat excepturi iusto beatae magni error? Ipsa, esse? Officiis ab fugit rem nobis, nihil dolorum placeat aliquam, ratione, quia sit explicabo. Vel qui voluptate vero veniam est, ipsum ex ut blanditiis corrupti nihil excepturi nobis ipsam placeat eius!</p>
+    </div>
+</ng-template>
+
+<ng-template #tutoCrud>
+    <ng-container *ngIf="tutorielLinkId == 2; else tutoRelations">
+        <div>
+            <h1>Mini tutoriel Crud</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt deserunt placeat natus temporibus, suscipit veniam saepe dolorem expedita fuga autem tenetur, quae dicta soluta fugit, recusandae odit vel quis repellat vitae quod! Voluptatum omnis temporibus molestias beatae qui nisi quidem enim iure minima. Repellat dolorum cumque aliquam vel vitae enim esse pariatur dicta. Et, obcaecati deserunt tenetur, molestias ullam illum reiciendis provident porro architecto dolorem iusto doloremque officiis asperiores, dolor in odit molestiae tempora veritatis. Architecto quas accusantium iste earum eos soluta sapiente minima, magni porro nisi ullam libero ex dolorum consequuntur accusamus? Eligendi non dolorum delectus nam ea voluptas!</p>
+        </div>
+    </ng-container>
+</ng-template>
+
+<ng-template #tutoRelations>
+    <div>
+        <h1>Mini tutoriel Relations</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo consectetur labore quasi praesentium quisquam nulla illo accusantium dignissimos voluptatibus consequatur! Culpa optio facere, soluta vel explicabo aspernatur pariatur et autem itaque iusto est nobis suscipit quasi, nisi in natus deserunt quam vitae ab officia saepe laboriosam, assumenda eligendi. Corrupti, labore!</p>
+    </div>
+</ng-template> -->
